@@ -57,6 +57,7 @@ def main():
     # Create a Tensir with just zeros ina column
     b = torch.zeros(5)
     print(b)
+    
     # tensor([0., 0., 0., 0., 0.])
     
     c = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])
@@ -160,6 +161,24 @@ def main():
     print(int_tensor)
     # tensor([[1, 2, 3],
     #     [4, 5, 6]], dtype=torch.int32)
+    
+    
+    # Tensor to/from Numpy Array
+    
+    import numpy as np
+    
+    # Tensor to Array
+    f_numpy = f.numpy()
+    print(f_numpy)
+#     [[1. 2.]
+#  [3. 4.]]
+    
+    # Array to Tensor
+    h = np.array([[8,7,6,5], [4,3,2,1]])
+    h_tensor = torch.from_numpy(h)
+    print(h_tensor)
+    # tensor([[8, 7, 6, 5],
+    #     [4, 3, 2, 1]], dtype=torch.int32)
     
     
 
