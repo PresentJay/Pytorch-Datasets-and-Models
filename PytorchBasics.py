@@ -89,6 +89,79 @@ def main():
 
     #     [[5., 6.],
     #      [7., 8.]]])
+    
+    
+    print(f'{f.shape}, {e.shape}, {g.shape}')
+    # torch.Size([2, 2]), torch.Size([3, 2]), torch.Size([2, 2, 2])
+    
+    
+    # Access an element in Tensor
+    
+    # Get element at index 2
+    print(c[2])
+    # tensor(3.)
+    
+    # All indices starting from 0
+    
+    # Get element at row 1, column 0
+    print(f[1, 0])
+    # tensor(3.)
+    
+    # We can also use the following
+    print(f[1][0])
+    # tensor(3.)
+    
+    # Similarly for 3D Tensor
+    print(g[1,0,0])
+    # tensor(5.)
+    
+    print(g[1][0][0])
+    # tensor(5.)
+    
+    
+    # All elements
+    print(f[:])
+    # tensor([[1., 2.],
+    #     [3., 4.]])
+    
+    # All elements from index 1 to 2 (inclusive)
+    print(c[1:3])
+    # tensor([2., 3.])
+    
+    # All elements till index 4 (exclusive)
+    print(c[:4])
+    # tensor([1., 2., 3., 4.])
+    
+    # First row
+    print(f[0, :])
+    # tensor([1., 2.])
+    
+    # Second Column
+    print(f[:, 1])
+    # tensor([2., 4.])
+    
+    
+    # Specify data type of elements
+    
+    int_tensor = torch.tensor([[1,2,3,] ,[4,5,6]])
+    print(int_tensor.dtype)
+    # torch.int64
+    
+    # What if we changed any one element to floating point number?
+    int_tensor = torch.tensor([[1,2,3], [4., 5,6]])
+    print(int_tensor.dtype)
+    # torch.float32
+    
+    # This can be overriden as follows
+    int_tensor = torch.tensor([[1,2,3], [4.,5,6]], dtype=torch.int32)
+    print(int_tensor.dtype)
+    # torch.int32
+    
+    print(int_tensor)
+    # tensor([[1, 2, 3],
+    #     [4, 5, 6]], dtype=torch.int32)
+    
+    
 
 if __name__ == "__main__":
     main()
