@@ -170,8 +170,9 @@ def main():
     # Tensor to Array
     f_numpy = f.numpy()
     print(f_numpy)
-#     [[1. 2.]
-#  [3. 4.]]
+    
+    #  [[1. 2.]
+    #  [3. 4.]]
     
     # Array to Tensor
     h = np.array([[8,7,6,5], [4,3,2,1]])
@@ -179,6 +180,57 @@ def main():
     print(h_tensor)
     # tensor([[8, 7, 6, 5],
     #     [4, 3, 2, 1]], dtype=torch.int32)
+    
+    
+    # Arithmetic Operations on Tensors
+    
+    # Create Tensor
+    tensor1 = torch.tensor([[1,2,3], [4,5,6]])
+    tensor2 = torch.tensor([[-1, 2, -3], [4,-5,6]])
+    
+    # Addition
+    print(tensor1 + tensor2)
+    # We can also use
+    print(torch.add(tensor1, tensor2))
+    # tensor([[ 0,  4,  0],
+    #     [ 8,  0, 12]])
+    
+    # Substraction
+    print(tensor1-tensor2)
+    # We can also use
+    print(torch.sub(tensor1, tensor2))
+    # tensor([[ 2,  0,  6],
+    #     [ 0, 10,  0]])
+    
+    # Multiplication
+    print(tensor1 * 2)
+    # tensor([[ 2,  4,  6],
+    #     [ 8, 10, 12]])
+    
+    # Tensor with another tensor
+    # Elementwise Multiplication
+    print(tensor1 * tensor2)
+    # tensor([[ -1,   4,  -9],
+    #     [ 16, -25,  36]])
+    
+    # Matrix multiplication
+    tensor3 = torch.tensor([[1,2] ,[3,4], [5,6]])
+    print(torch.mm(tensor1, tensor3))
+    # tensor([[22, 28],
+    #     [49, 64]])
+    
+    # Division
+    # Tensor with scalar
+    print(tensor1/2)
+    
+    
+    # Tensor with another tensor
+    # Elementwise division
+    print(tensor1/tensor2)
+    # tensor([[-1.,  1., -1.],
+    #     [ 1., -1.,  1.]])
+    
+    
     
     
 
