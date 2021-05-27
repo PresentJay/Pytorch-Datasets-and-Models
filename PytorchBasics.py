@@ -232,6 +232,36 @@ def main():
     
     
     
+    # GPU vs CPU Tensor
+    
+    # Create a tensor for CPU computation
+    # This will occupy CPU RAM
+    tensor_cpu = torch.tensor([[1.0, 2.0], [3.0, 4.0],[5.0, 6.0]], device = 'cpu')
+    
+    # Create a tensor for GPU
+    # This will occupy GPU RAM
+    tensor_gpu = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]], device = 'cuda')
+    
+    
+    # This uses CPU RAM
+    tensor_cpu == tensor_cpu * 5
+    print(tensor_cpu)
+    
+    # This uses GPU RAM
+    # Focus on GPU RAM Consumption
+    tensor_gpu = tensor_gpu * 5
+    print(tensor_gpu)
+    
+    # The key point to note here is that no information flows to CPU in the GPU tensor operations
+    # -except if we print or access the tensor
+    
+    # We can move the GPU tensor to CPU and also opposite direction.
+    tensor_gpu_cpu = tensor_gpu.to(device='cpu')
+    tensor_cpu_gpu = tensor_cpu.to(device='cuda')
+    
+    print(tensor_gpu_cpu)
+    print(tensor_cpu_gpu)
+    
     
 
 if __name__ == "__main__":
